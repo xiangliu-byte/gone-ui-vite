@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+  </head>
+  <body>
+    <h2>index</h2>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script type="module">
+      const { createApp } = Vue;
+      import SSYUI, {
+        SButton,
+        SFCButton,
+        TSXButton,
+      } from "../../dist/ssy-ui.js";
+
+      createApp({
+        template: `
+        <SButton/>
+        <SFCButton/>
+        <TSXButton/>
+        `,
+      })
+        .component(SButton.name, SButton)
+        .component(SFCButton.name, SFCButton)
+        .component(TSXButton.name, TSXButton)
+        .mount("#app");
+    </script>
+  </body>
+</html>
