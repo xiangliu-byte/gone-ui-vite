@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,12 +12,8 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script type="module">
-      const { createApp } = Vue;
-      import SSYUI, {
-        SButton,
-        SFCButton,
-        TSXButton,
-      } from "../../dist/ssy-ui.js";
+      const { createApp } = Vue
+      import SSYUI, { SButton, SFCButton, TSXButton } from '../../dist/ssy-ui.js'
 
       createApp({
         template: `
@@ -29,7 +25,7 @@
         .component(SButton.name, SButton)
         .component(SFCButton.name, SFCButton)
         .component(TSXButton.name, TSXButton)
-        .mount("#app");
+        .mount('#app')
     </script>
   </body>
 </html>

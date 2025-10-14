@@ -1,9 +1,13 @@
 {
   "name": "gone-ui-vite",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.16.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
   "scripts": {
     "test": "vitest",
     "dev": "vite",
@@ -15,18 +19,20 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.16.0",
+  "dependencies": {
+    "vue": "^3.5.22"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^5.4.1",
     "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@iconify-json/ic": "^1.2.4",
+    "@unocss/eslint-plugin": "^66.5.3",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitejs/plugin-vue-jsx": "^5.1.1",
     "@vue/test-utils": "2.4.6",
     "cz-customizable": "^7.5.1",
+    "eslint": "^9.37.0",
     "happy-dom": "15.7.4",
     "husky": "^9.1.7",
     "terser": "5.34.1",
@@ -35,8 +41,5 @@
     "vitepress": "^1.6.4",
     "vitepress-theme-demoblock": "3.0.7",
     "vitest": "2.1.2"
-  },
-  "dependencies": {
-    "vue": "^3.5.22"
   }
 }

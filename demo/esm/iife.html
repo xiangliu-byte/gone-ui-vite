@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,10 +14,10 @@
     <script src="../../node_modules/vue/dist/vue.global.js"></script>
     <script src="../../dist/ssy-ui.iife.js"></script>
     <script>
-      console.log("111");
-      const { createApp } = Vue;
-      console.log("vue", Vue);
-      console.log("SSYUI", SSYUI);
+      console.log('111')
+      const { createApp } = Vue
+      console.log('vue', Vue)
+      console.log('SSYUI', SSYUI)
       createApp({
         template: `
         <div style="margin-bottom:20px;">
@@ -57,7 +57,7 @@
     `,
       })
         .use(SSYUI.default)
-        .mount("#app");
+        .mount('#app')
     </script>
   </body>
 </html>

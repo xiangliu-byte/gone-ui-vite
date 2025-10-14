@@ -1,17 +1,17 @@
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import Unocss from 'unocss/vite'
 /// <reference types="vitest/config" />
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import Unocss from "unocss/vite";
+import { defineConfig } from 'vite'
 
 const rollupOptions = {
-  external: ["vue", "vue-router"],
+  external: ['vue', 'vue-router'],
   output: {
     globals: {
-      vue: "Vue",
+      vue: 'Vue',
     },
   },
-};
+}
 
 export default defineConfig({
   plugins: [
@@ -21,8 +21,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      'vue': 'vue/dist/vue.esm-bundler.js'
-    }
+      vue: 'vue/dist/vue.esm-bundler.js',
+    },
   },
   build: {
     rollupOptions,
@@ -31,11 +31,11 @@ export default defineConfig({
     cssCodeSplit: true,
     sourcemap: true, // 输出单独 source文件
     lib: {
-      entry: "./src/entry.ts",
-      name: "SSYUI",
-      fileName: "ssy-ui",
+      entry: './src/entry.ts',
+      name: 'SSYUI',
+      fileName: 'ssy-ui',
       // 导出模块格式
-      formats: ["es", "umd", "iife"],
+      formats: ['es', 'umd', 'iife'],
     },
   },
   test: {
@@ -43,6 +43,6 @@ export default defineConfig({
     globals: true,
     // simulate DOM with happy-dom
     // (requires installing happy-dom as a peer dependency)
-    environment: "happy-dom",
+    environment: 'happy-dom',
   },
-});
+})
