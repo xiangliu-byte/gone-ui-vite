@@ -1,8 +1,9 @@
 {
   "name": "gone-ui-vite",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "packageManager": "pnpm@10.16.0",
+  "files": ["dist"],
   "description": "",
   "author": "",
   "license": "ISC",
@@ -42,5 +43,9 @@
     "vitepress": "^1.6.4",
     "vitepress-theme-demoblock": "3.0.7",
     "vitest": "2.1.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
