@@ -6,9 +6,9 @@
   "description": "",
   "author": "",
   "license": "ISC",
+  "homepage": "https://gone-ui-vite.vercel.app/",
   "keywords": [],
   "sideEffects": false,
-  "homepage": "https://gone-ui-vite.vercel.app/",
   "exports": {
     ".": {
       "types": "./dist/entry.d.ts",

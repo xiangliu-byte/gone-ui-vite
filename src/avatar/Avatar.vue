@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { AvatarProps } from "./avatar";
+import type { AvatarProps } from './avatar'
 
 defineOptions({
-  name: "Avatar",
-});
+  name: 'Avatar',
+})
 
-const { round = false, size = "24px" } = defineProps<AvatarProps>();
+const { round = false, size = '24px' } = defineProps<AvatarProps>()
 </script>
 
 <template>
@@ -15,5 +15,5 @@ const { round = false, size = "24px" } = defineProps<AvatarProps>();
     class="object-cover"
     :class="round ? 'rounded-full' : 'rounded-lg'"
     :style="{ width: size, height: size }"
-  />
+  >
 </template>

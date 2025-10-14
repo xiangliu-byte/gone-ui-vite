@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,10 +14,10 @@
     <script src="../node_modules/vue/dist/vue.global.js"></script>
     <script src="../dist/Link/index.umd.cjs"></script>
     <script>
-      const { createApp } = Vue;
-      const { Link } = link;
+      const { createApp } = Vue
+      const { Link } = link
       // console.log('vue', Vue)
-      console.log("SSYUI:Link", Link);
+      console.log('SSYUI:Link', Link)
       createApp({
         template: `
         <div style="margin-bottom:20px;">
@@ -28,7 +28,7 @@
      `,
       })
         .use(Link)
-        .mount("#app");
+        .mount('#app')
     </script>
   </body>
 </html>

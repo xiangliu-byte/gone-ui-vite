@@ -14,6 +14,6 @@ export default antfu({
     html: true,
   },
   rules: {
-    "ts/no-empty-object-type": "off",
+    'ts/no-empty-object-type': 'off',
   },
 })

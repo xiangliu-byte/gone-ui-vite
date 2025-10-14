@@ -1,11 +1,11 @@
-import { withInstall } from "../utils/with-install";
-import _Avatar from "./Avatar.vue";
+import { withInstall } from '../utils/with-install'
+import _Avatar from './Avatar.vue'
 
-export const Avatar = withInstall(_Avatar);
-export default Avatar;
+export const Avatar = withInstall(_Avatar)
+export default Avatar
 
-declare module "vue" {
+declare module 'vue' {
   export interface GlobalComponents {
-    SAvatar: typeof Avatar;
+    SAvatar: typeof Avatar
   }
 }
