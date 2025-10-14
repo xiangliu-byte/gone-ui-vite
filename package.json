@@ -33,6 +33,7 @@
     "@vue/test-utils": "2.4.6",
     "cz-customizable": "^7.5.1",
     "eslint": "^9.37.0",
+    "eslint-plugin-format": "^1.0.2",
     "happy-dom": "15.7.4",
     "husky": "^9.1.7",
     "terser": "5.34.1",
