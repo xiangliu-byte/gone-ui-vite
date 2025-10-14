@@ -29,6 +29,7 @@ export default defineConfig({
     minify: false,
     // 添加库模式配置
     cssCodeSplit: true,
+    sourcemap: true, // 输出单独 source文件
     lib: {
       entry: "./src/entry.ts",
       name: "SSYUI",
