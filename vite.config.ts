@@ -1,48 +1,46 @@
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import Unocss from 'unocss/vite'
 /// <reference types="vitest/config" />
-import { defineConfig } from 'vite'
+import type { BuildOptions } from "vite";
+import { resolve } from "node:path";
+import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import UnoCSS from "unocss/vite";
+import { defineConfig } from "vite";
 
-const rollupOptions = {
-  external: ['vue', 'vue-router'],
+const rollupOptions: BuildOptions["rollupOptions"] = {
+  external: ["vue"], // 将这些模块保留在 bundle 之外
   output: {
     globals: {
-      vue: 'Vue',
+      vue: "Vue",
     },
+    exports: "named",
   },
-}
-
+};
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    Unocss(),
-  ],
+  plugins: [vue(), vueJsx(), UnoCSS()],
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.esm-bundler.js',
-    },
-  },
-  build: {
-    rollupOptions,
-    minify: false,
-    // 添加库模式配置
-    cssCodeSplit: true,
-    sourcemap: true, // 输出单独 source文件
-    lib: {
-      entry: './src/entry.ts',
-      name: 'SSYUI',
-      fileName: 'ssy-ui',
-      // 导出模块格式
-      formats: ['es', 'umd', 'iife'],
+      vue: "vue/dist/vue.esm-bundler",
     },
   },
   test: {
-    // enable jest-like global test APIs
     globals: true,
-    // simulate DOM with happy-dom
-    // (requires installing happy-dom as a peer dependency)
-    environment: 'happy-dom',
+    environment: "happy-dom",
   },
-})
+
+  build: {
+    rollupOptions,
+    minify: "terser", // boolean | 'terser' | 'esbuild'
+    sourcemap: false, // 输出单独 source文件
+    reportCompressedSize: true, // 生成压缩大小报告
+    cssCodeSplit: true,
+    // 添加库模式配置
+    lib: {
+      entry: resolve(__dirname, "src/entry.ts"),
+      name: "SSYUI",
+      fileName: "ssy-ui",
+      // 导出模块格式
+      formats: ["es", "umd"],
+    },
+  },
+});

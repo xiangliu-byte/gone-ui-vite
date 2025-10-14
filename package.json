@@ -7,18 +7,37 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "main": "index.js",
-  "files": ["dist"],
+  "sideEffects": false,
+  "homepage": "https://gone-ui-vite.vercel.app/",
+  "exports": {
+    ".": {
+      "types": "./dist/entry.d.ts",
+      "import": "./dist/ssy-ui.js",
+      "require": "./dist/ssy-ui.umd.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/ssy-ui.umd.cjs",
+  "module": "./dist/ssy-ui.js",
+  "types": "./dist/entry.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "dev": "vite",
-    "build": "vite build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:all": "vite build",
+    "build:components": "tsx ./scripts/build.ts",
+    "build": "pnpm build:components && pnpm type:build",
+    "typecheck": "vue-tsc --noEmit",
+    "type:build": "vue-tsc -b --declaration --emitDeclarationOnly tsconfig.types.json",
+    "clean:dist": "rimraf dist"
   },
   "dependencies": {
     "vue": "^3.5.22"
@@ -28,6 +47,7 @@
     "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@iconify-json/ic": "^1.2.4",
+    "@types/fs-extra": "^11.0.4",
     "@unocss/eslint-plugin": "^66.5.3",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitejs/plugin-vue-jsx": "^5.1.1",
@@ -35,14 +55,17 @@
     "cz-customizable": "^7.5.1",
     "eslint": "^9.37.0",
     "eslint-plugin-format": "^1.0.2",
+    "fs-extra": "^11.2.0",
     "happy-dom": "15.7.4",
     "husky": "^9.1.7",
     "terser": "5.34.1",
+    "tsx": "^4.20.6",
     "unocss": "^66.5.2",
     "vite": "^7.1.7",
     "vitepress": "^1.6.4",
     "vitepress-theme-demoblock": "3.0.7",
-    "vitest": "2.1.2"
+    "vitest": "2.1.2",
+    "vue-tsc": "^3.1.1"
   },
   "publishConfig": {
     "access": "public",
