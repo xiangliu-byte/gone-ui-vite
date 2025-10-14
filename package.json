@@ -3,12 +3,12 @@
   "type": "module",
   "version": "0.2.0",
   "packageManager": "pnpm@10.16.0",
-  "files": ["dist"],
   "description": "",
   "author": "",
   "license": "ISC",
   "keywords": [],
   "main": "index.js",
+  "files": ["dist"],
   "scripts": {
     "test": "vitest",
     "dev": "vite",

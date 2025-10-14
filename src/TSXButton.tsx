@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-//123
+
 export default defineComponent({
   name: 'TSXButton',
   render() {
