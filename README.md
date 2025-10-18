@@ -10,7 +10,7 @@
 
 <p align="center">
 <img alt="GitHub License" src="https://img.shields.io/github/license/RichardLitt/standard-readme">
-<img src="https://codecov.io/github/xiangliu-byte/gone-ui-vite/graph/badge.svg?token=J2V5B7BBVL"/> 
+<img src="https://codecov.io/github/xiangliu-byte/gone-ui-vite/graph/badge.svg?token=J2V5B7BBVL"/>
 </p>
 
 ## Features
